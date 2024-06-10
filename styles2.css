@@ -1,0 +1,295 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.Background{
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+}
+
+.First{
+  background-image: url(img\ 1.png);
+}
+
+h1{
+  transform: scale(120%);
+  transform: translateX(0%);
+}
+
+.Second{
+  height: 400px;
+}
+
+.Third{
+  display: flex;
+  flex-direction: column;
+  height:auto;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-between;
+}
+
+.Third > h1{
+  order: 1;
+}
+
+.Features{
+  flex-basis: 24%;
+  display: inline-block;
+  width: 20%;
+}
+
+.Features > .FeaturesText{
+  display: inline;
+  float:right;
+}
+
+.Features> img{
+  float:left;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+#CodeSnippet{
+  flex-basis: 90%;
+  order:2;
+  width: 100vh;
+
+}
+
+.Header{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position:absolute;
+  text-align: center;
+  
+}
+
+.First> .Header{
+  top: 80px;
+  color: white;
+}
+
+.Logos{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 50%;
+  align-content: space-around;
+  justify-content: space-around;
+}
+
+.HeaderWithImage>p{
+  color:white;
+  justify-content: 50%;
+}
+
+.DownloadForFree{
+  position: absolute;
+  left: 50%;
+  width: 200px;
+  height: 40px;
+  transform: scale(120%);
+  color:white;
+  transform: translate(-50%, -50%);
+  border-radius: 24px;
+  background: #8D81AC;
+}
+
+.TopBar{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  flex-basis: 100%;
+  background-color: #27262A;
+  display: flex;
+  justify-content: space-between;
+}
+
+#Logo{
+  padding:16px;
+  margin: 16px;
+  height: 32px;
+  width: 32px;
+  background-image: url(Logo\ 3.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#BuyButton{
+  margin:20px;
+  width: 120px;
+  height: 80px;
+  color:white;
+  border-radius: 24px;
+  background: #8D81AC;
+}
+
+.DropDownBtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.DropDown {
+  order: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.DropDown-content {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.DropDown-content a {
+  padding: 12px 16px;
+  font-size: 32px;
+  text-decoration: none;
+  display: block;
+}
+
+#Revolutionary{
+  transform: translateY(-40);
+  font-size: 54px;
+  width: 758.89px;
+}
+
+.GithubIcons{
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-basis: 50%;
+}
+
+.GithubIcons>img{
+  width: 50%;
+}
+
+.Fourth{
+  background-image: url(testmonials-bg\ 1.png);
+}
+
+#grad{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(transparent,#8D81AC);
+  top: 0;
+  align-items: center;
+}
+
+.Fifth{
+  background-color: #8D81AC;
+  height: auto;
+}
+
+.Pricing{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 50%;
+
+  justify-content: center;
+}
+
+.PricingBox{
+  display: block;
+  height: 800px;
+  width: 400px;
+  background-color: rgba(87, 87, 87, 0.471);
+  margin: 5px;
+}
+
+@media only screen and (min-width: 800px) {
+  .DropDown{
+    order: 0
+  }
+
+  .Logos{
+    transform:scale(150%);
+    position: absolute;
+    top:50%;
+    left:50%;
+    scale:calc(120%);
+    transform: translate(-50%, -50%);
+  }
+  
+  .TopBar{
+    background-color: transparent;
+  }
+
+  #BuyButton{
+    order: 1
+  }
+  .DropDownBtn{
+    display: none;
+  }
+  .DropDown-content{
+    top:20px;
+    background-color: transparent;
+    margin-right: 20px;
+  }
+  .DropDown-content>a{
+    color:#8D81AC;
+  }
+
+  .GithubIcons{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-basis: 33.3%;
+  }
+  .GithubIcons>img{
+    width: 33%;
+  }
+}
+
+@media only screen and (max-width:800px){
+  .DropDown-content a:hover {background-color: #ddd;}
+
+  .DropDown:hover .DropDown-content {display: block;}
+  .DropDown-content {
+    display: none;
+  }
+  .Third{
+    background-color: grey;
+    flex-direction: row;
+  }
+  .Features{
+    flex-basis: 100%;
+    left:50%;
+  }
+  .FeaturesText{
+    float: none;
+  }
+
+  .Pricing{
+    flex-direction: column;
+  }
+
+
+  .Logos{
+    grid-template-columns: auto;
+  }
+
+  .DropDown:hover .DropDownBtn {background-color: #3e8e41;}
+}
