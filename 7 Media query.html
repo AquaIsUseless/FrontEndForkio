@@ -7,6 +7,34 @@
     <link rel="stylesheet" href="styles2.css">
 </head>
 <body>
+    <script>
+        function processAutoheight()
+        {
+            var maxHeight = 0;
+        
+            // This will check first level children ONLY as intended.
+            $(".autoheight > *").each(function(){
+        
+                height = $(this).outerHeight(true); // outerHeight will add padding and margin to height total
+                maxHeight += height;
+            });
+        
+            $(".autoheight").height(maxHeight);
+        }
+        
+        // Recalculate under any condition that the viewport dimension has changed
+        $(document).ready(function() {
+        
+            $(window).resize(function() { processAutoheight(); });
+        
+            // BOTH were required to work on any device "document" and "window".
+            // I don't know if newer jQuery versions fixed this issue for any device.
+            $(document).resize(function() { processAutoheight(); });
+        
+            // First processing when document is ready
+            processAutoheight();
+        });
+    </script>
     <div class = "Background First">   
         <div class = "TopBar">
             <div id = "Logo"></div>
@@ -42,41 +70,43 @@
         </header>
     </div>
     <div class = "Background Third">
-        <h1 style="font-size: 54px;">&lt;Here is what you get&gt;</h1>
-        <div class = "Features">
-            <img src="icon1 3.png" alt="">
-            <div class = "FeaturesText">
-                <h2>Something1</h2>
-                <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
-            </div>    
-        </div>
-        <div class = "Features">
-            <img src="icon2 3.png" alt="">
-            <div class = "FeaturesText">
-                <h2>Something2</h2>
-                <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
-            </div>    
-        </div>
-        <div class = "Features">
-            <img src="icon33 3.png" alt="">
-            <div class = "FeaturesText">
-                <h2>Something3</h2>
-                <p>texttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+        <div class = FeaturesContainer>
+            <h1 style="font-size: 54px;">&lt;Here is what you get&gt;</h1>
+            <div class = "Features">
+                <img src="icon1 3.png" alt="">
+                <div class = "FeaturesText">
+                    <h2>Something1</h2>
+                    <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+                </div>    
             </div>
-        </div>
-        <div class = "Features">
-            <img src="icon 4.png" alt="">
-            <div class = "FeaturesText">
-                <h2>Something4</h2>
-                <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+            <div class = "Features">
+                <img src="icon2 3.png" alt="">
+                <div class = "FeaturesText">
+                    <h2>Something2</h2>
+                    <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+                </div>    
             </div>
+            <div class = "Features">
+                <img src="icon33 3.png" alt="">
+                <div class = "FeaturesText">
+                    <h2>Something3</h2>
+                    <p>texttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+                </div>
+            </div>
+            <div class = "Features">
+                <img src="icon 4.png" alt="">
+                <div class = "FeaturesText">
+                    <h2>Something4</h2>
+                    <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+                </div>
+            </div>
+            <img id = CodeSnippet src="editor 1.png" alt="editor">
         </div>
-        <img id = CodeSnippet src="editor 1.png" alt="editor">
     </div>
     <div class = "Background Fourth">
-        <div id = "grad">
+        <div id = "grad" class = "autoheight">
             <h1 style="color: white; font-size: 400%; top: 20px; text-align: center;">People Are Talking About Fork</h1>
-            <div class = "Logos">
+            <div class = "Logos autoheight">
                 <div class = "HeaderWithImage">
                     <img src="logo5 1.png" alt="">
                     <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
